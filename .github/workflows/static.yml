@@ -53,6 +53,7 @@ jobs:
       - name: Build Go binary
         run: |
           cd $GITHUB_WORKSPACE  # Cambia al directorio del repositorio clonado
+          go mod init swagger-demo-Shop-t-shirt  # Inicializa el módulo si no está presente
           go build -o swagger-demo-Shop-t-shirt
 
       - name: Deploy to GitHub Pages
