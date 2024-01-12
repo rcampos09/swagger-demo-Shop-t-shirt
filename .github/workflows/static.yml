@@ -21,9 +21,6 @@ jobs:
       - name: Init go.mod
         run: go mod init swagger-demo-Shop-t-shirt
   
-      - name: Modify go.mod to exclude problematic package versions
-        run: go mod edit -exclude=golang.org/x/tools@v0.17.0 -exclude=github.com/urfave/cli/v2@v2.27.1 -exclude=github.com/go-openapi/swag@v0.22.7
-
       - name: Update dependencies
         run: go mod tidy
 
