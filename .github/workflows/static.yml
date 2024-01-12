@@ -21,9 +21,6 @@ jobs:
       - name: Go Version
         run: go version
 
-      - name: Init go.mod
-        run: go mod init swagger-demo-Shop-t-shirt
-  
       - name: Update dependencies
         run: |
           go clean -modcache
@@ -48,10 +45,12 @@ jobs:
       - name: Set up Go
         uses: actions/setup-go@v2
         with:
-          go-version: 1.18
+          go-version: 1.19
 
       - name: Build Go binary
-        run: go build -o swagger-demo-Shop-t-shirt
+        run: |
+          cd path/to/your/project
+          go build -o swagger-demo-Shop-t-shirt
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
