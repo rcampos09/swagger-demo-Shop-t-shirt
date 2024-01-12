@@ -51,7 +51,9 @@ jobs:
           go-version: 1.19
 
       - name: Build Go binary
-        run: go build -o swagger-demo-Shop-t-shirt
+        run: |
+          cd $GITHUB_WORKSPACE  # Cambia al directorio del repositorio clonado
+          go build -o swagger-demo-Shop-t-shirt
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
