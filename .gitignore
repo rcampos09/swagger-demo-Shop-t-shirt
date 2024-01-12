@@ -1,0 +1,26 @@
+# Archivos binarios y ejecutables
+/bin/
+*.exe
+*.dll
+*.exe~
+*.dll~
+*.exe.bak
+*.dll.bak
+*.log
+
+# Dependencias y módulos
+/vendor/
+/go.sum
+/go.mod
+
+# Archivos de configuración específicos de IDE
+.idea/
+.vscode/
+
+# Documentación generada
+/docs/swagger/
+/docs/swagger.json
+/docs/swagger.yaml
+
+# Otros archivos generados durante el desarrollo
+/main
