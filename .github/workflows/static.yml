@@ -28,9 +28,8 @@ jobs:
 
       - name: Install swag
         run: |
-          GO111MODULE=off go get -u github.com/swaggo/swag/cmd/swag
-          export GO111MODULE=on
-          export PATH=$PATH:$(go env GOPATH)/bin        
+          go get -u github.com/swaggo/swag/cmd/swag
+          go install github.com/swaggo/swag/cmd/swag
 
       - name: Generate Swagger docs
         run: swag init
