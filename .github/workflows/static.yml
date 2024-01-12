@@ -22,7 +22,9 @@ jobs:
         run: go mod init swagger-demo-Shop-t-shirt
   
       - name: Update dependencies
-        run: go mod tidy
+        run: |
+          go clean -modcache
+          go mod tidy
 
       - name: Install swag
         run: |
