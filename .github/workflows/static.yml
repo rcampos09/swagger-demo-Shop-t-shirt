@@ -64,9 +64,10 @@ jobs:
           go get go.mongodb.org/mongo-driver/mongo
           go get go.mongodb.org/mongo-driver/mongo/options
           go build -o swagger-demo-Shop-t-shirt
+          ls -la
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GH_TOKEN }}
-          publish_dir: ./docs
+          publish_dir: ./swagger
