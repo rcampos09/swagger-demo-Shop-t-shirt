@@ -20,9 +20,6 @@ jobs:
 
       - name: Go Version
         run: go version
-
-      - name: Init go.mod
-        run: go mod init swagger-demo-Shop-t-shirt
   
       - name: Update dependencies
         run: |
