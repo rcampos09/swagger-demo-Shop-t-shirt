@@ -22,6 +22,15 @@ go get go.mongodb.org/mongo-driver/mongo
 go get go.mongodb.org/mongo-driver/mongo/options
 ```
 
+### Instalación de swag Linux/MacOS
+
+```bash
+brew tap go-swagger/go-swagger  
+brew install go-swagger
+export PATH=$PATH:$(go env GOPATH)/bin
+go run main.go
+```
+
 ### Ejecución del Proyecto
 ```bash
 go run main.go

@@ -63,7 +63,7 @@ jobs:
           go get go.mongodb.org/mongo-driver/bson/primitive
           go get go.mongodb.org/mongo-driver/mongo
           go get go.mongodb.org/mongo-driver/mongo/options
-          go run main.go 
+          go build .
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
