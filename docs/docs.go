@@ -341,7 +341,7 @@ const docTemplate = `{
 // SwaggerInfo holds exported Swagger Info so clients can modify it
 var SwaggerInfo = &swag.Spec{
 	Version:          "1.0",
-	Host:             "https://swagger-demo-shop-t-shirt.onrender.com/",
+	Host:             "swagger-demo-shop-t-shirt.onrender.com/",
 	BasePath:         "",
 	Schemes:          []string{},
 	Title:            "APIs Swagger-Shop-t-Shirt",

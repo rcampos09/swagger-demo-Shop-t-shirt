@@ -102,7 +102,7 @@ type Producto struct {
 // @version 1.0
 // @description API para gestionar productos (Shop-t-shirt)
 // @description @dontesterlabs
-// @host https://swagger-demo-shop-t-shirt.onrender.com/
+// @host swagger-demo-shop-t-shirt.onrender.com/
 func main() {
 	r := gin.Default()
 
