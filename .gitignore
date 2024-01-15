@@ -10,7 +10,6 @@
 
 # Dependencias y módulos
 /vendor/
-/go.sum
 
 # Archivos de configuración específicos de IDE
 .idea/
