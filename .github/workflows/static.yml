@@ -37,4 +37,4 @@ jobs:
       - name: Generate Swagger docs
         run: |
           swag init
-          cd docs && ls -la
+          cd docs && ls -la     
