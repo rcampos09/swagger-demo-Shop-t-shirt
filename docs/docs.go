@@ -293,6 +293,35 @@ const docTemplate = `{
                     }
                 }
             }
+        },
+        "/v1/token": {
+            "get": {
+                "description": "Generate and return a new token",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Authentication"
+                ],
+                "summary": "Generate Token",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/main.Respuesta"
+                        }
+                    },
+                    "500": {
+                        "description": "Error during token generation",
+                        "schema": {
+                            "$ref": "#/definitions/main.Respuesta"
+                        }
+                    }
+                }
+            }
         }
     },
     "definitions": {

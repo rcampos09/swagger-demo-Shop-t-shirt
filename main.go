@@ -74,6 +74,7 @@ func init() {
 	serverAPI := options.ServerAPI(options.ServerAPIVersion1)
 	username := os.Getenv("MONGO_USERNAME")
 	password := os.Getenv("MONGO_PASSWORD")
+
 	encodedUsername := url.QueryEscape(username)
 	encodedPassword := url.QueryEscape(password)
 	opts := options.Client().ApplyURI("mongodb+srv://" + encodedUsername + ":" + encodedPassword + "@cluster.wiczv8n.mongodb.net/?retryWrites=true&w=majority").SetServerAPIOptions(serverAPI)
@@ -126,7 +127,14 @@ func main() {
 	r.Run(":8080")
 }
 
-// Función para generar y devolver un nuevo token
+// @Summary Generate Token
+// @Description Generate and return a new token
+// @Tags Authentication
+// @Accept json
+// @Produce json
+// @Success 200 {object} Respuesta "Successful operation"
+// @Failure 500 {object} Respuesta "Error during token generation"
+// @Router /v1/token [get]
 func generateTokenHandler(c *gin.Context) {
 	token, err := generateToken()
 	if err != nil {
