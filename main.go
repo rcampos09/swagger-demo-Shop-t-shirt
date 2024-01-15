@@ -6,6 +6,7 @@ import (
 	"log"
 	"net/http"
 	"net/url"
+	"os"
 	"strings"
 	"time"
 
@@ -71,8 +72,8 @@ func authMiddleware() gin.HandlerFunc {
 
 func init() {
 	serverAPI := options.ServerAPI(options.ServerAPIVersion1)
-	username := "demo-Shop-t-shirt-user"
-	password := "PEfVJEOkQR75o4Ey"
+	username := os.Getenv("MONGO_USERNAME")
+	password := os.Getenv("MONGO_PASSWORD")
 	encodedUsername := url.QueryEscape(username)
 	encodedPassword := url.QueryEscape(password)
 	opts := options.Client().ApplyURI("mongodb+srv://" + encodedUsername + ":" + encodedPassword + "@cluster.wiczv8n.mongodb.net/?retryWrites=true&w=majority").SetServerAPIOptions(serverAPI)
