@@ -11,7 +11,6 @@
 # Dependencias y módulos
 /vendor/
 /go.sum
-/go.mod
 
 # Archivos de configuración específicos de IDE
 .idea/
