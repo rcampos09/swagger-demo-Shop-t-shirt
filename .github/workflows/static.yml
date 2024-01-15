@@ -35,38 +35,6 @@ jobs:
           go install github.com/swaggo/swag/cmd/swag
 
       - name: Generate Swagger docs
-        run: swag init
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
-      - name: Set up Go
-        uses: actions/setup-go@v2
-        with:
-          go-version: 1.19
-
-      - name: Build Go binary
         run: |
-          cd $GITHUB_WORKSPACE  # Cambia al directorio del repositorio clonado
-          go mod init swagger-demo-Shop-t-shirt  # Inicializa el módulo si no está presente
-          go get github.com/dgrijalva/jwt-go
-          go get github.com/gin-gonic/gin
-          go get github.com/swaggo/files
-          go get github.com/swaggo/gin-swagger
-          go get github.com/swaggo/swag
-          go get go.mongodb.org/mongo-driver/bson
-          go get go.mongodb.org/mongo-driver/bson/primitive
-          go get go.mongodb.org/mongo-driver/mongo
-          go get go.mongodb.org/mongo-driver/mongo/options
-          go build .
-
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GH_TOKEN }}
-          publish_dir: ./swagger
+          swag init
+          cd docs && ls -la
